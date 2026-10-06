@@ -1,0 +1,113 @@
+@startuml
+skinparam classAttributeIconSize 1
+
+class Persona{
+# nombre: String
+# Apellido: String
+# Dni: Double
+# FehcaNacimiento: Date
+}
+Class Alumno{
+ legajoAlumno: string
+}
+Class Docente{
+CargaTrabajoDocente: Integer
+HorarioDocente: DataTime
+AntiguedadDocente:Integer
+SueldoDocente: Decimal
+LegajoDocente: String
+}
+
+Class NoDocente{
+LegajoNoDocente: String 
+CargaTrabajoNodocente:DataTime
+AntiguedadNoDocente: Integer
+SueldoNoDocente: Decimal
+}
+
+Class Administrativo{}
+Class Bibliotecario{}
+Class Limpieza{}
+Class Cocina{}
+
+Class Materia{
+NombreMateria:String
+CodigoMateria: String
+Horario:DateTime
+CargaHoraria: Integer
+}
+
+Class Facultad{
+Nombre: String
+Direccion: String
+Modulo: String
+Decano: String
+Horaio: Datatime
+}
+
+Class JTP{
+}
+
+Class Adjunto{
+}
+
+Class Auxiliar{
+}
+
+Class Carrera{
+Nombre: String
+CodigoCarrera: String
+Descripcion: String
+}
+
+Class Correlativa{
+NombreCorrelativa: String
+
+}
+
+Class Inscripcion{
+CodigoInscripcion: String
+FechaEmision: DateTime
+
+}
+Class Aula{
+NombreAula: String
+DescripcionAula:String
+DimencionAula:Decimal
+}
+
+enum EstadoMateria{
+1 Regular
+2 Aprobado
+3 Promocionado
+4 Libre
+}
+
+enum EstoAlumno{
+1 Cursando
+2 No Cursando
+}
+
+Facultad "1" <--- "0..*" Aula
+Aula"0..*" <-- "0..1" Materia 
+Facultad "1" <--"0..*"Persona
+Facultad "1"  <-- "1..*" Carrera: Posee <
+Carrera "1..*"<-- "1..*" Materia: Posee <
+Materia "1" <-- "0..*" Correlativa: Posee <
+Materia "1" <-- "0..*" Inscripcion: Tiene
+Inscripcion "0..*" <-- "0..*" Alumno: Realiza
+Materia "1..*" <-- "1..*" Docente
+
+
+Persona <|---Alumno:Es un <
+Persona <|--- NoDocente: Es un <
+Persona <|-- Docente: Es un <
+NoDocente <|-- Administrativo:Es un <
+NoDocente <|-- Limpieza : Es un <
+NoDocente <|-- Bibliotecario: Es un <
+NoDocente <|-- Cocina: Es un <
+Docente <|-- JTP: Es un <
+Docente <|-- Adjunto: Es un <
+Docente <|-- Auxiliar: Es un <
+
+@enduml
