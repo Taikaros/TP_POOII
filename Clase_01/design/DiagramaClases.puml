@@ -25,10 +25,22 @@ AntiguedadNoDocente: Integer
 SueldoNoDocente: Decimal
 }
 
-Class Administrativo{}
-Class Bibliotecario{}
-Class Limpieza{}
-Class Cocina{}
+Class Administrativo{
+AreaAdministrativa: String
+FuncionAdministrativa: String
+}
+Class Bibliotecario{
+AreaBiblioteca: String
+Turno: String
+}
+Class Limpieza{
+SectorAsignado: String
+Turno: String
+}
+Class Cocina{
+Especialidad: String
+Turno: String
+}
 
 Class Materia{
 NombreMateria:String
@@ -46,12 +58,18 @@ Horaio: Datatime
 }
 
 Class JTP{
+CantidadComisiones: Integer
+DedicacionJTP: String
 }
 
 Class Adjunto{
+DedicacionAdjunto: String
+CategoriaAdjunto: String
 }
 
 Class Auxiliar{
+NivelAuxiliar: String
+DedicacionAuxiliar: String
 }
 
 Class Carrera{
