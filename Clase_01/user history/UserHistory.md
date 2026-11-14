@@ -6,7 +6,7 @@ Como estudiante quiero inscribirme a una mesa de examen para avanzar con la carr
 **Criterio de aceptacion** 
 Dado que el estudiante se encuentra regular, cuando se intenta inscribir a la mesa el sistema genera un acta. 
 
-Actor: Estudiante
+Actor: Alumno
 ==
 Historia de Usuario
 Como estudiante quiero inscribirme a una cursada para quedar regular o promecionar, además de sabes en que salon se dará la clase.
@@ -14,7 +14,7 @@ Como estudiante quiero inscribirme a una cursada para quedar regular o promecion
 **Criterio de aceptacion**
 Dado que el estudiante se encuentra libre, cuando se inscribe a la cursada se le asigna un aula. 
 
-Actor: Estudiante
+Actor: Alumno
 ==
 Historia de Usuario
 Como estudiante quiero saber mi estado académico para saber si me puedo iscribir a una mesa de examen.
